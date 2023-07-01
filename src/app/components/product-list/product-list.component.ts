@@ -18,7 +18,11 @@ export class ProductListComponent implements OnInit {
   }
   
   listProducts() {
-    throw new Error('Method not implemented.');
+    this.productService.getProductList().subscribe(
+      data => {
+        this.products = data;
+      }
+    )
   }
 
 }
