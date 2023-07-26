@@ -7,8 +7,12 @@
             <th>Units in Stock</th>
         </tr>
     </thead>
-</table>
 
-<p *ngFor="let tempProduct of products">
-    {{ tempProduct.name }}: {{tempProduct.unitPrice | currency: 'USD'}}
-</p>
+    <tbody>
+        <tr *ngFor="let tempProduct of products">
+            <td>{{ tempProduct.name }}</td>
+            <td>{{ tempProduct.unitPrice | currency: 'USD' }}</td>
+            <td>{{ tempProduct.unitsInStock }}</td>
+        </tr>
+    </tbody>
+</table>
