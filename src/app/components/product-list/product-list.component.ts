@@ -28,6 +28,10 @@ export class ProductListComponent implements OnInit {
 
 	if (hasCategoryId){
 		//get the "id" param string. Convert string to a number  using the "+" operator
+		this.currentCategoryId =+ this.route.snapshot.paramMap.get("id")!;
+	} else{
+		// no category id avialble ... default to category id 1
+		this.currentCategoryId = 1;
 	}
 
     this.productService.getProductList().subscribe(
