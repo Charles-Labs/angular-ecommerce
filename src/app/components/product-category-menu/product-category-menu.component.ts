@@ -16,8 +16,13 @@ export class ProductCategoryMenuComponent {
   ngOnInit() {
     this.listProductCategories()
   }
-  
+
   listProductCategories() {
-    throw new Error('Method not implemented.');
+    this.productService.getProductList().subscribe(
+      data => {
+        console.log("Product Categoroes" + JSON.stringify(data));
+        this.productCategories = data;
+      }
+    )
   }
 }
