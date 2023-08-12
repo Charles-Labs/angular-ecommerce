@@ -20,7 +20,7 @@ export class ProductCategoryMenuComponent {
   listProductCategories() {
     this.productService.getProductList().subscribe(
       data => {
-        console.log("Product Categoroes" + JSON.stringify(data));
+        console.log("Product Categories" + JSON.stringify(data));
         this.productCategories = data;
       }
     )
