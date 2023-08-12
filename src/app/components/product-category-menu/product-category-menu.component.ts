@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ProductCategory } from 'src/app/common/product-category';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-category-menu',
@@ -7,4 +9,15 @@ import { Component } from '@angular/core';
 })
 export class ProductCategoryMenuComponent {
 
+  productCategories: ProductCategory[] = [];
+
+  constructor(private productService: ProductService) {}
+
+  ngOnInit() {
+    this.listProductCategories()
+  }
+  
+  listProductCategories() {
+    throw new Error('Method not implemented.');
+  }
 }
