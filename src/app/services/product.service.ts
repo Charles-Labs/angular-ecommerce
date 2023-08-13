@@ -20,6 +20,10 @@ export class ProductService {
       map(response => response._embedded.products)
     );
   }
+
+  getProductCategories() {
+    throw new Error('Method not implemented.');
+  }
 }
 
 interface GetResponse {
