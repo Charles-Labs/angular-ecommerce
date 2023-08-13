@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { Product } from '../common/product';
+import { ProductCategory } from '../common/product-category';
 
 @Injectable({
   providedIn: 'root'
@@ -16,19 +17,26 @@ export class ProductService {
 
     const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}`;
 
-    return this.httpClient.get<GetResponseProduct>(searchUrl).pipe(
+    return this.httpClient.get<GetResponseProducts>(searchUrl).pipe(
       map(response => response._embedded.products)
     );
   }
 
-  getProductCategories() {
-    throw new Error('Method not implemented.');
+  getProductCategories(): Observable<ProductCategory[]> {
+    return this.httpClient.get<GetResponseProductCategory>(categoryUrl).pipe(
+      map(response => response._embedded.productCategory)
+    );
   }
 }
 
-interface GetResponseProduct {
+interface GetResponseProducts {
   _embedded: {
     products: Product[];
   }
+}
 
+interface GetResponseProductCategory {
+  _embedded: {
+    productCategory: ProductCategory[];
+  }
 }
