@@ -4,7 +4,7 @@
             class="au-input au-input-xl" name="search"
             (keyup.enter)="doSearch(searchInput.value)" />
 
-    <button class="au-btn-submit" type="submit">
+    <button (click)="doSearch(searchInput.value)" type="submit">
         Search
     </button>
 </div>
