@@ -1,7 +1,8 @@
 <div class="form-header">
     <input #searchInput type="text"
             placeholder="Search for products ..."
-            class="au-input au-input-xl" name="search" />
+            class="au-input au-input-xl" name="search"
+            (keyup.enter)="doSearch(searchInput.value)" />
 
     <button class="au-btn-submit" type="submit">
         Search
