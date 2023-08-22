@@ -24,6 +24,10 @@ export class ProductListComponent implements OnInit {
   }
   
   listProducts() {
+	this.handleListProducts();
+  }
+
+  handleListProducts() {
 	const hasCategoryId: boolean = this.route.snapshot.paramMap.has("id");
 
 	if (hasCategoryId){
@@ -38,7 +42,5 @@ export class ProductListComponent implements OnInit {
       }
     )
   }
-
-  handleListProducts() {}
 
 }
