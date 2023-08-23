@@ -27,10 +27,14 @@ export class ProductListComponent implements OnInit {
 	this.searchMode = this.route.snapshot.paramMap.has("keyword");
 
 	if(this.searchMode) {
-
+    this.handleSearchProducts();
 	} else {
 		this.handleListProducts();
 	}
+  }
+  
+  handleSearchProducts() {
+    throw new Error('Method not implemented.');
   }
 
   handleListProducts() {
