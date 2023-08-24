@@ -9,7 +9,7 @@ import { ProductCategory } from '../common/product-category';
 })
 export class ProductService {
 
-	searchProducts(theKeyword: string | null) {
+	searchProducts(theKeyword: String): Observable<Product[]> {
 		throw new Error('Method not implemented.');
 	}
 
