@@ -14,7 +14,11 @@ export class ProductService {
 	constructor(private httpClient: HttpClient) { }
 
 	searchProducts(theKeyword: String): Observable<Product[]> {
-		throw new Error('Method not implemented.');
+		const searchUrl = `${this.baseUrl}/search/findByNameContaining?name=${theKeyword}`;
+
+		return this.httpClient.get<GetResponseProducts>(searchUrl).pipe(
+			map(response => response._embedded.products)
+		);
 	}
 
 	getProductList(theCategoryId: number): Observable<Product[]> {
