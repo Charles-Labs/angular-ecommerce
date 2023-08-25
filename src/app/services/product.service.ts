@@ -8,15 +8,14 @@ import { ProductCategory } from '../common/product-category';
 	providedIn: 'root'
 })
 export class ProductService {
-
-	searchProducts(theKeyword: String): Observable<Product[]> {
-		throw new Error('Method not implemented.');
-	}
-
 	private baseUrl = 'http://localhost:8080/api/products';
 	private categoryUrl = 'http://localhost:8080/api/product-category';
 
 	constructor(private httpClient: HttpClient) { }
+
+	searchProducts(theKeyword: String): Observable<Product[]> {
+		throw new Error('Method not implemented.');
+	}
 
 	getProductList(theCategoryId: number): Observable<Product[]> {
 
