@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
-	product: Product;
+	product!: Product;
 
 	constructor(private productService: ProductService,
 				private route: ActivatedRoute) {}
@@ -18,6 +18,10 @@ export class ProductDetailsComponent implements OnInit {
 		this.route.paramMap.subscribe(() => {
 			this.handleProductDetails();
 		})
+	}
+	
+	handleProductDetails() {
+		throw new Error('Method not implemented.');
 	}
 
 }
