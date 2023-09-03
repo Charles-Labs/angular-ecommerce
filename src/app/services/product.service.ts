@@ -13,7 +13,7 @@ export class ProductService {
 
 	constructor(private httpClient: HttpClient) { }
 
-	getProduct(theProductId: number) {
+	getProduct(theProductId: number): Observable<Product> {
 		throw new Error('Method not implemented.');
 	}
 
