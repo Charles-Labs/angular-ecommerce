@@ -21,7 +21,13 @@ export class ProductDetailsComponent implements OnInit {
 	}
 	
 	handleProductDetails() {
-		throw new Error('Method not implemented.');
+		const theProductId = +this.route.snapshot.paramMap.get("id")!;
+
+		this.productService.getProduct(theProductId).subscribe(
+			data => {
+				this.product = data;
+			}
+		)
 	}
 
 }
