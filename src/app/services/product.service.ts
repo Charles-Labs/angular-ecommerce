@@ -13,6 +13,10 @@ export class ProductService {
 
 	constructor(private httpClient: HttpClient) { }
 
+	getProduct(theProductId: number) {
+		throw new Error('Method not implemented.');
+	}
+
 	getProductList(theCategoryId: number): Observable<Product[]> {
 
 		const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}`;
