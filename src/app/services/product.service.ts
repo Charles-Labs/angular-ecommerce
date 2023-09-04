@@ -49,7 +49,7 @@ export class ProductService {
 
 interface GetResponseProduct {
 	_embedded: {
-		products: Product;
+		product: Product;
 	}
 }
 
