@@ -16,7 +16,7 @@ export class ProductService {
 	getProduct(theProductId: number): Observable<Product> {
 		const productUrl = `${this.baseUrl}/search/findById?id=${theProductId}`;
 
-		return this.httpClient.get<GetResponseProduct>(this.categoryUrl).pipe(
+		return this.httpClient.get<GetResponseProduct>(productUrl).pipe(
 			map(response => response._embedded.product)
 		);
 	}
