@@ -16,9 +16,7 @@ export class ProductService {
 	getProduct(theProductId: number): Observable<Product> {
 		const productUrl = `${this.baseUrl}/${theProductId}`;
 
-		return this.httpClient.get<GetResponseProduct>(productUrl).pipe(
-			map(response => response.product)
-		);
+		return this.httpClient.get<Product>(productUrl);
 	}
 
 	getProductList(theCategoryId: number): Observable<Product[]> {
@@ -45,10 +43,6 @@ export class ProductService {
 			map(response => response._embedded.productCategory)
 		);
 	}
-}
-
-interface GetResponseProduct {
-	product: Product;
 }
 
 interface GetResponseProducts {
