@@ -15,9 +15,10 @@ export class ProductService {
 
 	getProduct(theProductId: number): Observable<Product> {
 		const productUrl = `${this.baseUrl}/search/findById?id=${theProductId}`;
+		console.log(productUrl);
 
 		return this.httpClient.get<GetResponseProduct>(productUrl).pipe(
-			map(response => response._embedded.product)
+			map(response => response._embedded.products.product)
 		);
 	}
 
@@ -49,7 +50,9 @@ export class ProductService {
 
 interface GetResponseProduct {
 	_embedded: {
-		product: Product;
+		products: {
+			product: Product;
+		}
 	}
 }
 
