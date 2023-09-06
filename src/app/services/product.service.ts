@@ -17,7 +17,7 @@ export class ProductService {
 		const productUrl = `${this.baseUrl}/${theProductId}`;
 
 		return this.httpClient.get<GetResponseProduct>(productUrl).pipe(
-			map(response => response._embedded.products.product)
+			map(response => response.product)
 		);
 	}
 
@@ -48,11 +48,7 @@ export class ProductService {
 }
 
 interface GetResponseProduct {
-	_embedded: {
-		products: {
-			product: Product;
-		}
-	}
+	product: Product;
 }
 
 interface GetResponseProducts {
