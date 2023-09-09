@@ -84,7 +84,8 @@ h6{
 }
 
 a{
-    display:inline-block
+    display:inline-block;
+    text-decoration: none !important;
 }
 
 a:active,a:focus,a:hover{
