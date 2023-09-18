@@ -66,6 +66,10 @@ export class ProductListComponent implements OnInit {
 			this.thePageNumber = 1;
 		}
 
+		this.previousCategoryId = this.currentCategoryId;
+
+		console.log(`currentCategoryId=${this.currentCategoryId}, thePageNumber=${this.thePageNumber}`);
+
 
 		this.productService.getProductList(this.currentCategoryId).subscribe(
 			data => {
