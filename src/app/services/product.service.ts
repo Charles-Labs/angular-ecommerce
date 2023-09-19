@@ -19,7 +19,7 @@ export class ProductService {
 		return this.httpClient.get<Product>(productUrl);
 	}
 
-	getProductPerPage(pageSize: number,
+	getProductListPaginate(pageSize: number,
 						pageNumber: number,
 						categoryId: number): Observable<GetResponseProducts> {
 
