@@ -42,7 +42,7 @@
 
                             <div class="col-md-3 mt-2" style="text-align: right;">
                                 <span class="mr-2">Page Size</span>
-                                <select #selectedPageSize (change)="changePageSize(selectedPageSize.value)" class="form-control-sm">
+                                <select #selectedPageSize (change)="changePageSize(+selectedPageSize.value)" class="form-control-sm">
                                     <option selected="true">5</option>
                                     <option>10</option>
                                     <option>20</option>
