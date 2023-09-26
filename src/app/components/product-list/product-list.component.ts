@@ -49,6 +49,11 @@ export class ProductListComponent implements OnInit {
 		if (this.previousKeyword != theKeyword) {
 			this.thePageNumber = 1;
 		}
+		this.previousKeyword = theKeyword;
+
+		console.log(`keyword=${theKeyword}, thePageNumber=${this.thePageNumber}`);
+
+
 
 		this.productService.searchProducts(theKeyword).subscribe(
 			data => {
