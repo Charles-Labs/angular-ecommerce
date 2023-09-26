@@ -44,6 +44,12 @@ export class ProductListComponent implements OnInit {
 	handleSearchProducts() {
 		const theKeyword = this.route.snapshot.paramMap.get("keyword")!;
 
+		// if we have a different keyword than previous
+		// then set thePageNumber to 1
+		if (this.previousKeyword != theKeyword) {
+			this.thePageNumber = 1;
+		}
+
 		this.productService.searchProducts(theKeyword).subscribe(
 			data => {
 				this.products = data;
