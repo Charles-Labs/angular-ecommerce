@@ -53,13 +53,10 @@ export class ProductListComponent implements OnInit {
 
 		console.log(`keyword=${theKeyword}, thePageNumber=${this.thePageNumber}`);
 
-
-
-		this.productService.searchProducts(theKeyword).subscribe(
-			data => {
-				this.products = data;
-			}
-		);
+		// now search for the products using keyword
+		this.productService.searchProductsPaginate(this.thePageNumber - 1,
+													this.thePageSize,
+													theKeyword).subscribe(this.processResult());
 	}
 
 	handleListProducts() {
