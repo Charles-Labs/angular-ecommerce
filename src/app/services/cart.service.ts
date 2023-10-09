@@ -38,4 +38,8 @@ export class CartService {
     // compute cart total price and total quantity
     this.computeCartTotals();
   }
+  
+  computeCartTotals() {
+    throw new Error('Method not implemented.');
+  }
 }
