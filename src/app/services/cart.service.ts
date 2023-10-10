@@ -40,6 +40,19 @@ export class CartService {
   }
   
   computeCartTotals() {
-    throw new Error('Method not implemented.');
+    let totalPriceValue: number = 0;
+    let totalQuantityValue: number = 0;
+
+    for(let currentCartItem of this.cartItems) {
+      totalPriceValue += currentCartItem.quantity * currentCartItem.unitPrice;
+      totalQuantityValue += currentCartItem.quantity;
+    }
+
+    // publish the new values ... all subscribers will receive the new data
+    this.totalPrice.next(totalPriceValue);
+    this.totalQuantity.next(totalQuantityValue);
+
+    // log cart data just for debugging purposes
+    this.logCartData(totalPriceValue, totalQuantityValue);
   }
 }
