@@ -64,5 +64,6 @@ export class CartService {
     }
 
     console.log(`totalPrice: ${totalPriceValue.toFixed(2)}, totalQuantity: ${totalQuantityValue}`);
+    console.log('----');
   }
 }
