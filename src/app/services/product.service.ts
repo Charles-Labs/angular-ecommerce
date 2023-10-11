@@ -63,10 +63,6 @@ export class ProductService {
 			map(response => response._embedded.productCategory)
 		);
 	}
-
-	addToCart(theCartItem: { name: String; unitPrice: number; quantity: number; }) {
-		throw new Error('Method not implemented.');
-	}
 }
 
 interface GetResponseProducts {
