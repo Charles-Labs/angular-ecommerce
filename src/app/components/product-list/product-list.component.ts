@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CartItem } from 'src/app/common/cart-item';
 import { Product } from 'src/app/common/product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -104,11 +105,7 @@ export class ProductListComponent implements OnInit {
 	addToCart(theProduct: Product) {
 		console.log(`Adding to cart: ${theProduct.name}, ${theProduct.unitPrice}`);
 
-		const theCartItem = {
-			name: theProduct.name,
-			unitPrice: theProduct.unitPrice,
-			quantity: 1
-		};
+		const theCartItem = new CartItem(theProduct);
 
 		this.productService.addToCart(theCartItem);
 	}
