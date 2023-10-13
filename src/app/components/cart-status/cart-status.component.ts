@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./cart-status.component.css']
 })
 export class CartStatusComponent {
+  
+  totalPrice: number = 0.00;
+  totalQuantity: number = 0;
 
 }
