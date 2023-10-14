@@ -16,4 +16,8 @@ export class CartStatusComponent {
   ngOnInit(): void {
     this.updateCartStatus();
   }
+  
+  updateCartStatus() {
+    throw new Error('Method not implemented.');
+  }
 }
