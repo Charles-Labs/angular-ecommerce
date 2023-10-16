@@ -31,4 +31,8 @@ export class ProductDetailsComponent implements OnInit {
 		)
 	}
 
+	addToCart() {
+		
+	}
+
 }
