@@ -12,6 +12,12 @@ export class CartDetailsComponent {
   totalPrice: number = 0.00;
   totalQuantity: number = 0;
   
-  constructor() { }
+  constructor() {
+    this.listCartDetails();
+   }
+   
+  listCartDetails() {
+    throw new Error('Method not implemented.');
+  }
 
 }
