@@ -38,6 +38,10 @@ export class CartService {
     // compute cart total price and total quantity
     this.computeCartTotals();
   }
+
+  removeFromCart(theCartItem: CartItem) {
+    
+  }
   
   computeCartTotals() {
     let totalPriceValue: number = 0;

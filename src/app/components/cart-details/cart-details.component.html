@@ -21,9 +21,11 @@
                         <td>
                             <div class="items">
                                 <label>Quantity: </label>
-                                <!-- <button class="btn btn-sm btn-danger" (click)="decrementQuantity(tempCartItem)">-</button> -->
+                                <button class="btn btn-sm btn-danger" (click)="decrementQuantity(tempCartItem)">-</button>
                                     {{tempCartItem.quantity}}
-                                <button class="btn btn-sm btn-primary" (click)="incrementQuantity(tempCartItem)"><i class="fas fa-plus"></i></button>
+                                <button class="btn btn-sm btn-primary" (click)="incrementQuantity(tempCartItem)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
                             </div>
 
                             <p class="mt-2">Subtotal: {{tempCartItem.quantity * tempCartItem.unitPrice}}</p>
