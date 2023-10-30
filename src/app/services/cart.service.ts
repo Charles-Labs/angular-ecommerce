@@ -39,7 +39,7 @@ export class CartService {
     this.computeCartTotals();
   }
 
-  removeFromCart(theCartItem: CartItem) {
+  decrementQuantity(theCartItem: CartItem) {
     
   }
   
