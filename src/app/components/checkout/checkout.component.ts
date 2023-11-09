@@ -32,6 +32,14 @@ export class CheckoutComponent {
         country: [''],
         zipCode: ['']
       }),
+      creditCard: this.formBuilder.group({
+        cardType: [''],
+        nameOnCard: [''],
+        cardNumber: [''],
+        securityCode: [''],
+        expirationMonth: [''],
+        expirationYear: ['']
+      }),
     });
   }
 
