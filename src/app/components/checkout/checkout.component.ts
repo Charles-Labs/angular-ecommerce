@@ -21,9 +21,9 @@ export class CheckoutComponent {
       shippingAddress: this.formBuilder.group({
         street: [''],
         city: [''],
-        state: [''],
+        province: [''],
         country: [''],
-        zipCode: ['']
+        areaCode: ['']
       }),
       billingAddress: this.formBuilder.group({
         street: [''],
