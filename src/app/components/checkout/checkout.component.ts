@@ -25,6 +25,13 @@ export class CheckoutComponent {
         country: [''],
         zipCode: ['']
       }),
+      billingAddress: this.formBuilder.group({
+        street: [''],
+        city: [''],
+        state: [''],
+        country: [''],
+        zipCode: ['']
+      }),
     });
   }
 
