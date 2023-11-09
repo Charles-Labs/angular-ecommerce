@@ -39,7 +39,7 @@ export class CheckoutComponent {
         securityCode: [''],
         expirationMonth: [''],
         expirationYear: ['']
-      }),
+      })
     });
   }
 
