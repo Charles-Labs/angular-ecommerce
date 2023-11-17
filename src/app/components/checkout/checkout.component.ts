@@ -67,7 +67,7 @@ export class CheckoutComponent {
 			console.log("Retrieved credit card years: " + JSON.stringify(data));
 			this.creditCardYears = data;
 		}
-	)
+	);
   }
 
   onSubmit() {
