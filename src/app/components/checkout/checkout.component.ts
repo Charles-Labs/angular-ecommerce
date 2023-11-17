@@ -12,6 +12,8 @@ export class CheckoutComponent {
 
   totalPrice: number = 0;
   totalQuantity: number = 0;
+  creditCardYears: number[] = [];
+  crediCardMonths: number[] = [];
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -45,6 +47,10 @@ export class CheckoutComponent {
         expirationYear: ['']
       })
     });
+
+    // populate credit card months
+    const startMonth: number = new Date().getMonth + 1;
+    console.log("startMonth: " + startMonth);
   }
 
   onSubmit() {
