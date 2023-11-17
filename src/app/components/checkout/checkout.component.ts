@@ -60,6 +60,14 @@ export class CheckoutComponent {
 			this.crediCardMonths = data;
 		}
 	);
+
+	// populate credit card years
+	this.ecommerceFormService.getCreditCardYears().subscribe(
+		data => {
+			console.log("Retrieved credit card years: " + JSON.stringify(data));
+			this.creditCardYears = data;
+		}
+	)
   }
 
   onSubmit() {
