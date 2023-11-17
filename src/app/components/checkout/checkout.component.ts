@@ -54,7 +54,12 @@ export class CheckoutComponent {
     const startMonth: number = new Date().getMonth() + 1;
     console.log("startMonth: " + startMonth);
 
-    this.
+    this.ecommerceFormService.getCreditCardMonths(startMonth).subscribe(
+		data => {
+			console.log("Retrieved credit card months: " + JSON.stringify(data));
+			this.crediCardMonths = data;
+		}
+	);
   }
 
   onSubmit() {
