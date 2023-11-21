@@ -71,7 +71,19 @@ export class CheckoutComponent {
   }
 
   handleMonthsAndYears(){
+	const creditCardFormGroup = this.checkoutFormGroup.get('creditCard');
+
+	const currentYear: number = new Date().getFullYear();
+	const selectedYear: number = Number(creditCardFormGroup.value.expirationYear);
 	
+	if( this.creditCardYears[1] === 2023){
+		this.ecommerceFormService.getCreditCardMonths(0).subscribe(
+			data => {
+				console.log("Retrieved credit card months: " + JSON.stringify(data));
+				this.crediCardMonths = data;
+			}
+		);
+	}
   }
 
   onSubmit() {
