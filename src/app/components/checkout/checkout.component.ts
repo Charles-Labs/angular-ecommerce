@@ -75,7 +75,14 @@ export class CheckoutComponent {
 
 	const currentYear: number = new Date().getFullYear();
 	const selectedYear: number = Number(creditCardFormGroup.value.expirationYear);
-	
+
+	// if the current year equals the selected year, then start with current month
+
+	let startMonth: number;
+	if(currentYear === selectedYear){
+		startMonth = new Date().getMonth + 1;
+	}
+
 	if( this.creditCardYears[1] === 2023){
 		this.ecommerceFormService.getCreditCardMonths(0).subscribe(
 			data => {
