@@ -72,24 +72,17 @@ export class CheckoutComponent {
 
   handleMonthsAndYears(){
 	const creditCardFormGroup = this.checkoutFormGroup.get('creditCard');
+  console.log("Handling months and years");
 
 	const currentYear: number = new Date().getFullYear();
-	const selectedYear: number = Number(creditCardFormGroup.value.expirationYear);
+	const selectedYear: number = Number(creditCardFormGroup?.value.expirationYear);
 
 	// if the current year equals the selected year, then start with current month
 
-	let startMonth: number;
+	let startMonth: number = 1;
 	if(currentYear === selectedYear){
-		startMonth = new Date().getMonth + 1;
-	}
-
-	if( this.creditCardYears[1] === 2023){
-		this.ecommerceFormService.getCreditCardMonths(0).subscribe(
-			data => {
-				console.log("Retrieved credit card months: " + JSON.stringify(data));
-				this.crediCardMonths = data;
-			}
-		);
+		console.log("Handling months and years");
+		startMonth = new Date().getMonth() + 1;
 	}
   }
 
