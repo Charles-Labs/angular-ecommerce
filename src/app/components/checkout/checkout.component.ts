@@ -72,7 +72,6 @@ export class CheckoutComponent {
 
   handleMonthsAndYears(){
 	const creditCardFormGroup = this.checkoutFormGroup.get('creditCard');
-  console.log("Handling months and years");
 
 	const currentYear: number = new Date().getFullYear();
 	const selectedYear: number = Number(creditCardFormGroup?.value.expirationYear);
@@ -81,9 +80,15 @@ export class CheckoutComponent {
 
 	let startMonth: number = 1;
 	if(currentYear === selectedYear){
-		console.log("Handling months and years");
 		startMonth = new Date().getMonth() + 1;
 	}
+
+	this.ecommerceFormService.getCreditCardMonths(startMonth).subscribe(
+		data => {
+			console.log("Retrieved credit card months: " + JSON.stringify(data));
+			this.crediCardMonths = data;
+		}
+	)
   }
 
   onSubmit() {
