@@ -8,8 +8,8 @@ import { ProductCategory } from '../common/product-category';
 	providedIn: 'root'
 })
 export class ProductService {
-	private baseUrl = 'http://boxwood-reach-401517.uc.r.appspot.com/api/products';
-	private categoryUrl = 'http://boxwood-reach-401517.uc.r.appspot.com/api/product-category';
+	private baseUrl = 'https://boxwood-reach-401517.uc.r.appspot.com/api/products';
+	private categoryUrl = 'https://boxwood-reach-401517.uc.r.appspot.com/api/product-category';
 
 	constructor(private httpClient: HttpClient) { }
 
