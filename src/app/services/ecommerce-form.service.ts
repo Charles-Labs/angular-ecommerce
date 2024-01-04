@@ -45,4 +45,11 @@ export class EcommerceFormService {
       map(response => response._embedded.countries)
     );
   }
+  
+}
+
+interface GetResponseCountries {
+  _embedded: {
+    countries: Country[];
+  }
 }
