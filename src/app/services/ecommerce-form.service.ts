@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, map, of } from 'rxjs';
+import { Country } from '../common/country';
 
 @Injectable({
   providedIn: 'root'
@@ -37,5 +38,11 @@ export class EcommerceFormService {
     }
 
     return of(data);
+  }
+
+  getCountries(): Observable<Country>{
+    return this.httpClient.get<GetResponseCountries>(this.countriesUrl).pipe(
+      map(response => response._embedded.countries)
+    );
   }
 }
