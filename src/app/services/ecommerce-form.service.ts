@@ -40,12 +40,14 @@ export class EcommerceFormService {
     return of(data);
   }
 
-  getCountries(): Observable<Country>{
+  getCountries(): Observable<Country[]>{
+
     return this.httpClient.get<GetResponseCountries>(this.countriesUrl).pipe(
       map(response => response._embedded.countries)
     );
+
   }
-  
+
 }
 
 interface GetResponseCountries {
