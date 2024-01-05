@@ -62,3 +62,9 @@ interface GetResponseCountries {
     countries: Country[];
   }
 }
+
+interface GetResponseStates {
+  _embedded: {
+    states: State[];
+  }
+}
