@@ -52,7 +52,12 @@ export class EcommerceFormService {
   getStates(theCountryCode: String): Observable<State[]>{
     
     //search url
-    const searchUrl = this.statesUrl;
+    const searchUrl = `${this.statesUrl}/search/findByCountryCode?code=${theCountryCode}`;
+
+    return this.httpClient.get<GetResponseStates>(searchUrl).pipe(
+      map(response => response._embedded.states)
+    );
+    
   }
 
 }
