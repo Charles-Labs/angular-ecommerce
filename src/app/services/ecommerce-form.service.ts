@@ -9,8 +9,8 @@ import { State } from '../common/state';
 })
 export class EcommerceFormService {
 
-  private countriesUrl = 'https://boxwood-reach-401517.uc.r.appspot.com/api/countries';
-  private statesUrl = 'http://boxwood-reach-401517.uc.r.appspot.com/api/states';
+  private countriesUrl = 'http://localhost:8080/api/countries';
+  private statesUrl = 'http://localhost:8080/api/states';
 
   constructor(private httpClient: HttpClient) { }
 
