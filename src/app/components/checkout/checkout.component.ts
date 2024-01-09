@@ -65,7 +65,7 @@ export class CheckoutComponent {
 			}
 		);
 
-		// populate credit card years
+		// populate countries
 		this.ecommerceFormService.getCountries().subscribe(
 			data => {
 				console.log("Retrieved countries: " + JSON.stringify(data));
