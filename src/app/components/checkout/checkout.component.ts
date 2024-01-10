@@ -103,4 +103,8 @@ export class CheckoutComponent {
 		console.log("Handling the submit button");
 		console.log(this.checkoutFormGroup.get('customer')?.value);
 	}
+
+	getStates() {
+		throw new Error('Method not implemented.');
+	}
 }
