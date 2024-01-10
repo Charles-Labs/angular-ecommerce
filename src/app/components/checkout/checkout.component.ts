@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { State } from '@popperjs/core';
 import { Country } from 'src/app/common/country';
 import { EcommerceFormService } from 'src/app/services/ecommerce-form.service';
 
@@ -17,6 +18,8 @@ export class CheckoutComponent {
 	creditCardYears: number[] = [];
 	crediCardMonths: number[] = [];
 	countries: Country[] = [];
+	shippingAddressStates: State[] = [];
+	billingAddressStates: State[] = [];
 
 	constructor(private formBuilder: FormBuilder,
 		private ecommerceFormService: EcommerceFormService) { }
@@ -105,6 +108,12 @@ export class CheckoutComponent {
 	}
 
 	getStates() {
-		throw new Error('Method not implemented.');
+		// populate countries
+		this.ecommerceFormService.getStates(country).subscribe(
+			data => {
+				console.log("Retrieved states: " + JSON.stringify(data));
+				this.states = data;
+			}
+		);
 	}
 }
