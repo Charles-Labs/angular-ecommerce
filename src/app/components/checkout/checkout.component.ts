@@ -12,14 +12,14 @@ import { EcommerceFormService } from 'src/app/services/ecommerce-form.service';
 export class CheckoutComponent {
 
 	checkoutFormGroup!: FormGroup;
+	shippingAddressStates: State[] = [];
+	billingAddressStates: State[] = [];
 
 	totalPrice: number = 0;
 	totalQuantity: number = 0;
 	creditCardYears: number[] = [];
 	crediCardMonths: number[] = [];
 	countries: Country[] = [];
-	shippingAddressStates: State[] = [];
-	billingAddressStates: State[] = [];
 
 	constructor(private formBuilder: FormBuilder,
 		private ecommerceFormService: EcommerceFormService) { }
@@ -107,7 +107,7 @@ export class CheckoutComponent {
 		console.log(this.checkoutFormGroup.get('customer')?.value);
 	}
 
-	getStates() {
+	getStates(formGroupName: String) {
 		// populate countries
 		this.ecommerceFormService.getStates(country).subscribe(
 			data => {
