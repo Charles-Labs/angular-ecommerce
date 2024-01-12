@@ -107,12 +107,21 @@ export class CheckoutComponent {
 		console.log(this.checkoutFormGroup.get('customer')?.value);
 	}
 
-	getStates(formGroupName: String) {
-		// populate countries
-		this.ecommerceFormService.getStates(country).subscribe(
+	getStates(formGroupName: string) {
+
+		const formGroup = this.checkoutFormGroup.get(formGroupName)!;
+		const code = formGroup.value.country.code;
+		
+		// populate states
+		this.ecommerceFormService.getStates(code).subscribe(
 			data => {
 				console.log("Retrieved states: " + JSON.stringify(data));
-				this.states = data;
+
+				if (formGroupName === 'shippingAddress') {
+					this.shippingAddressStates = data;
+				} else {
+					this.billingAddressStates = data;
+				}
 			}
 		);
 	}
