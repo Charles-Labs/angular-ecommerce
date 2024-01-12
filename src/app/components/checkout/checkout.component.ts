@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { State } from '@popperjs/core';
 import { Country } from 'src/app/common/country';
+import { State } from 'src/app/common/state';
 import { EcommerceFormService } from 'src/app/services/ecommerce-form.service';
 
 @Component({
