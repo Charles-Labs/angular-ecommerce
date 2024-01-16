@@ -31,7 +31,9 @@ export class CheckoutComponent {
 					[Validators.required, Validators.minLength(2)]),
 				lastName: new FormControl('',
 					[Validators.required, Validators.minLength(2)]),
-				email: ['']
+				email: new FormControl('',
+					[Validators.required, 
+					Validators.pattern('')])
 			}),
 			shippingAddress: this.formBuilder.group({
 				street: [''],
