@@ -116,10 +116,15 @@ export class CheckoutComponent {
 	getStates(formGroupName: string) {
 
 		const formGroup = this.checkoutFormGroup.get(formGroupName)!;
-		const code = formGroup.value.country.code;
+
+		const countryCode = formGroup.value.country.code;
+		const countryName =formGroup.value.country.name;
+
+		console.log(`${formGroupName} country code: ${countryCode}`);
+		console.log(`${formGroupName} country name: ${countryName}`);
 		
 		// populate states
-		this.ecommerceFormService.getStates(code).subscribe(
+		this.ecommerceFormService.getStates(countryCode).subscribe(
 			data => {
 				console.log("Retrieved states: " + JSON.stringify(data));
 
