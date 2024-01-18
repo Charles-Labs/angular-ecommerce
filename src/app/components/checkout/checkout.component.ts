@@ -133,6 +133,9 @@ export class CheckoutComponent {
 				} else {
 					this.billingAddressStates = data;
 				}
+
+				// select first state value by default
+				formGroup.get('state')?.setValue(data[0]);
 			}
 		);
 	}
