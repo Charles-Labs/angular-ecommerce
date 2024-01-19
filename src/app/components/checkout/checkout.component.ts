@@ -45,7 +45,7 @@ export class CheckoutComponent {
 			billingAddress: this.formBuilder.group({
 				street: [''],
 				city: [''],
-				state: [''],
+				province: [''],
 				country: [''],
 				zipCode: ['']
 			}),
@@ -135,7 +135,7 @@ export class CheckoutComponent {
 				}
 
 				// select first state value by default
-				formGroup.get('state')?.setValue(data[0]);
+				formGroup.get('province')?.setValue(data[0]);
 			}
 		);
 	}
