@@ -139,4 +139,8 @@ export class CheckoutComponent {
 			}
 		);
 	}
+
+	copyShippingAddressToBillingAddress() {
+		
+	}
 }
