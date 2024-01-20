@@ -139,4 +139,13 @@ export class CheckoutComponent {
 			}
 		);
 	}
+
+	copyShippingAddressToBillingAddress(event: { target: { checked: any; }; }) {
+		if (event.target.checked) {
+			this.checkoutFormGroup.controls['billingAddress']
+				.setValue(this.checkoutFormGroup.controls['shippingAddress'].value);
+		} else {
+			this.checkoutFormGroup.controls['billingAddress'].reset();
+		}
+	}
 }
