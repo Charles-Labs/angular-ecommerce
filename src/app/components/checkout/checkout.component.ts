@@ -47,7 +47,7 @@ export class CheckoutComponent {
 				city: [''],
 				province: [''],
 				country: [''],
-				zipCode: ['']
+				areaCode: ['']
 			}),
 			creditCard: this.formBuilder.group({
 				cardType: [''],
