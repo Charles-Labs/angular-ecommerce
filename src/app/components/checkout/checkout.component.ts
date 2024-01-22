@@ -146,6 +146,7 @@ export class CheckoutComponent {
 				.setValue(this.checkoutFormGroup.controls['shippingAddress'].value);
 
 			// bug fix for states
+			this.billingAddressStates = this.shippingAddressStates;
 		} else {
 			this.checkoutFormGroup.controls['billingAddress'].reset();
 		}
