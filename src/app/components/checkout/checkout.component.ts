@@ -144,6 +144,8 @@ export class CheckoutComponent {
 		if (event.target.checked) {
 			this.checkoutFormGroup.controls['billingAddress']
 				.setValue(this.checkoutFormGroup.controls['shippingAddress'].value);
+
+			// bug fix for states
 		} else {
 			this.checkoutFormGroup.controls['billingAddress'].reset();
 		}
