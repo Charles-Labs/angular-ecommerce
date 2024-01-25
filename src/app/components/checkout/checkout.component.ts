@@ -156,5 +156,7 @@ export class CheckoutComponent {
 		return this.checkoutFormGroup.get('customer.firstName');
 	}
 
-	
+	get lastName() {
+		return this.checkoutFormGroup.get('customer.lastName');
+	}
 }
