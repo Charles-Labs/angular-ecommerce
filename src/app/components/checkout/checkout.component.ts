@@ -159,4 +159,8 @@ export class CheckoutComponent {
 	get lastName() {
 		return this.checkoutFormGroup.get('customer.lastName');
 	}
+
+	get email() {
+		return this.checkoutFormGroup.get('customer.email');
+	}
 }
