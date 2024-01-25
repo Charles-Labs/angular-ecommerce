@@ -151,4 +151,10 @@ export class CheckoutComponent {
 			this.checkoutFormGroup.controls['billingAddress'].reset();
 		}
 	}
+
+	get firstName() {
+		return this.checkoutFormGroup.get('customer.firstName');
+	}
+
+	
 }
