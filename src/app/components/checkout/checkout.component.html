@@ -17,7 +17,9 @@
                                     <div *ngIf="firstName?.errors.required">
                                         First Name is required
                                     </div>
-                                    <div></div>
+                                    
+                                    <div *ngIf="firstName?.errors.minLength">
+                                    </div>
                                 </div>
                             </div>
                         </div>
