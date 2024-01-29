@@ -51,7 +51,7 @@
                                 <input formControlName="email" type="text">
                                 <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger">
                                     <div *ngIf="email?.errors.required">
-                                        First Name is required
+                                        Email is required
                                     </div>
                                     
                                     <div *ngIf="lastName?.errors.minLength">
