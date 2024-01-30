@@ -54,8 +54,8 @@
                                         Email is required
                                     </div>
                                     
-                                    <div *ngIf="lastName?.errors.minLength">
-                                        First Name must be at least 2 characters long
+                                    <div *ngIf="email?.errors.pattern">
+                                        Email must be a valid email address
                                     </div>
                                 </div>
                             </div>
