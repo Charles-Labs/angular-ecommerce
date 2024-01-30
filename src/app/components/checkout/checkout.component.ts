@@ -115,6 +115,7 @@ export class CheckoutComponent {
 		if (this.checkoutFormGroup.invalid) {
 			this.checkoutFormGroup.markAllAsTouched();
 		}
+		console.log("CheckoutFormGroup is valid: " + this.checkoutFormGroup.valid);
 	}
 
 	getStates(formGroupName: string) {
