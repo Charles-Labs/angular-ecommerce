@@ -51,11 +51,14 @@ export class CheckoutComponent {
 												EcommerceValidators.notOnlyWhitespace])
 			}),
 			billingAddress: this.formBuilder.group({
-				street: [''],
-				city: [''],
+				street: new FormControl('', [Validators.required, Validators.minLength(2),
+												EcommerceValidators.notOnlyWhitespace]),
+				city: new FormControl('', [Validators.required, Validators.minLength(2),
+											EcommerceValidators.notOnlyWhitespace]),
 				province: [''],
 				country: [''],
-				areaCode: ['']
+				areaCode: new FormControl('', [Validators.required, Validators.minLength(2),
+												EcommerceValidators.notOnlyWhitespace])
 			}),
 			creditCard: this.formBuilder.group({
 				cardType: [''],
