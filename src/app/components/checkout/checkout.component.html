@@ -85,6 +85,15 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="street" type="text">
+                                <div *ngIf="street?.invalid && (street?.dirty || street?.touched)" class="alert alert-danger">
+                                    <div *ngIf="street?.errors?.['required']">
+                                        Street is required
+                                    </div>
+                                    
+                                    <div *ngIf="street?.errors?.['minlength']">
+                                        Street must be at least 2 characters long
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
