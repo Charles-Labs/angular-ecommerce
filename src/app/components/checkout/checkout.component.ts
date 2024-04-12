@@ -45,8 +45,8 @@ export class CheckoutComponent {
 												EcommerceValidators.notOnlyWhitespace]),
 				city: new FormControl('', [Validators.required, Validators.minLength(2),
 											EcommerceValidators.notOnlyWhitespace]),
-				province: [''],
-				country: [''],
+				province: new FormControl('', [Validators.required]),
+				country: new FormControl('', [Validators.required]),
 				areaCode: new FormControl('', [Validators.required, Validators.minLength(2),
 												EcommerceValidators.notOnlyWhitespace])
 			}),
