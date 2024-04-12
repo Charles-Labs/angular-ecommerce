@@ -165,6 +165,8 @@ export class CheckoutComponent {
 	get lastName() { return this.checkoutFormGroup.get('customer.lastName'); }
 	get email() { return this.checkoutFormGroup.get('customer.email'); }
 
+	get street() { return this.checkoutFormGroup.get('shippingAddress.street'); }
+
 	copyShippingAddressToBillingAddress(event: any) {
 		if (event.target.checked) {
 			this.checkoutFormGroup.controls['billingAddress']
