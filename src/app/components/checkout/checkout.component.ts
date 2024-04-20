@@ -100,11 +100,11 @@ export class CheckoutComponent {
 
 	reviewCartDetails() {
 		//subscribe to cartService.totalQuantity
+
+		//subscribe to cartService.totalPrice
 		this.cartService.totalPrice.subscribe(
 			data => this.totalPrice = data
 		);
-
-		//subscribe to cartService.totalPrice
 	}
 
 	handleMonthsAndYears() {
