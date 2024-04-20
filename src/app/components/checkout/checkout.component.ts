@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Country } from 'src/app/common/country';
 import { State } from 'src/app/common/state';
+import { CartService } from 'src/app/services/cart.service';
 import { EcommerceFormService } from 'src/app/services/ecommerce-form.service';
 import { EcommerceValidators } from 'src/app/validators/ecommerce-validators';
 
@@ -23,7 +24,8 @@ export class CheckoutComponent {
 	countries: Country[] = [];
 
 	constructor(private formBuilder: FormBuilder,
-		private ecommerceFormService: EcommerceFormService) { }
+		private ecommerceFormService: EcommerceFormService,
+		private cartService: CartService) { }
 
 	ngOnInit(): void {
 		this.checkoutFormGroup = this.formBuilder.group({
