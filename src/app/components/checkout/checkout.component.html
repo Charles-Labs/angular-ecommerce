@@ -121,10 +121,15 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <select formControlName="province">
-                                    <option *ngFor="let state of shippingAddressStates" [ngValue]="state">
-                                        {{state.name}}
+                                    <option *ngFor="let province of shippingAddressStates" [ngValue]="province">
+                                        {{province.name}}
                                     </option>
                                 </select>
+                                <div *ngIf="province?.invalid && (province?.dirty || province?.touched)" class="alert alert-danger">
+                                    <div *ngIf="province?.errors?.['required']">
+                                        Province is required
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
