@@ -100,6 +100,9 @@ export class CheckoutComponent {
 
 	reviewCartDetails() {
 		//subscribe to cartService.totalQuantity
+		this.cartService.totalPrice.subscribe(
+			data => this.totalQuantity = data
+		);
 
 		//subscribe to cartService.totalPrice
 		this.cartService.totalPrice.subscribe(
