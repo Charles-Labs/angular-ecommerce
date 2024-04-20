@@ -28,6 +28,8 @@ export class CheckoutComponent {
 		private cartService: CartService) { }
 
 	ngOnInit(): void {
+		this.reviewCartDetails();
+		
 		this.checkoutFormGroup = this.formBuilder.group({
 			customer: this.formBuilder.group({
 				firstName: new FormControl('',
@@ -94,6 +96,10 @@ export class CheckoutComponent {
 				this.countries = data;
 			}
 		);
+	}
+	
+	reviewCartDetails() {
+		throw new Error('Method not implemented.');
 	}
 
 	handleMonthsAndYears() {
