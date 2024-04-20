@@ -97,9 +97,14 @@ export class CheckoutComponent {
 			}
 		);
 	}
-	
+
 	reviewCartDetails() {
-		throw new Error('Method not implemented.');
+		//subscribe to cartService.totalQuantity
+		this.cartService.totalPrice.subscribe(
+			data => this.totalPrice = data
+		);
+
+		//subscribe to cartService.totalPrice
 	}
 
 	handleMonthsAndYears() {
