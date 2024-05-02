@@ -34,14 +34,15 @@ export class CheckoutComponent {
 					 EcommerceValidators.notOnlyWhitespace]),
 				lastName: new FormControl('',
 					[Validators.required,
-						Validators.minLength(2),
-						EcommerceValidators.notOnlyWhitespace]),
+					 Validators.minLength(2),
+					 EcommerceValidators.notOnlyWhitespace]),
 				email: new FormControl('',
 					[Validators.required, 
 					Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')])
 			}),
 			shippingAddress: this.formBuilder.group({
-				street: [''],
+				street:  new FormControl('', [Validators.required, Validators.minLength(2),
+												EcommerceValidators.notOnlyWhitespace]),
 				city: [''],
 				province: [''],
 				country: [''],
