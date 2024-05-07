@@ -171,7 +171,8 @@ export class CheckoutComponent {
 	get country() { return this.checkoutFormGroup.get('shippingAddress.country'); }
 	get areaCode() { return this.checkoutFormGroup.get('shippingAddress.areaCode'); }
 
-	get billingAddresscountry() { return this.checkoutFormGroup.get('billingAddress.country'); }
+	get billingAddressCountry() { return this.checkoutFormGroup.get('billingAddress.country'); }
+	get billingAddressStreet() { return this.checkoutFormGroup.get('billingAddress.street'); }
 
 	copyShippingAddressToBillingAddress(event: any) {
 		if (event.target.checked) {
