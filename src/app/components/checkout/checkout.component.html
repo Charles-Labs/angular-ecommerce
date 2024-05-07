@@ -179,6 +179,11 @@
                                         {{country.name}}
                                     </option>
                                 </select>
+                                <div *ngIf="billingAddresscountry?.invalid && (billingAddresscountry?.dirty || billingAddresscountry?.touched)" class="alert alert-danger">
+                                    <div *ngIf="billingAddresscountry?.errors?.['required']">
+                                        Country is required
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

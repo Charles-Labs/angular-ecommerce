@@ -56,7 +56,7 @@ export class CheckoutComponent {
 				city: new FormControl('', [Validators.required, Validators.minLength(2),
 											EcommerceValidators.notOnlyWhitespace]),
 				province: [''],
-				country: [''],
+				country: new FormControl('', [Validators.required]),
 				areaCode: new FormControl('', [Validators.required, Validators.minLength(2),
 												EcommerceValidators.notOnlyWhitespace])
 			}),
@@ -170,6 +170,8 @@ export class CheckoutComponent {
 	get province() { return this.checkoutFormGroup.get('shippingAddress.province'); }
 	get country() { return this.checkoutFormGroup.get('shippingAddress.country'); }
 	get areaCode() { return this.checkoutFormGroup.get('shippingAddress.areaCode'); }
+
+	get billingAddresscountry() { return this.checkoutFormGroup.get('billingAddress.country'); }
 
 	copyShippingAddressToBillingAddress(event: any) {
 		if (event.target.checked) {
