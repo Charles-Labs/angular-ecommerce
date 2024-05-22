@@ -290,11 +290,11 @@
                                 <input formControlName="cardNumber" type="text">
                                 <div *ngIf="cardNumber?.invalid && (cardNumber?.dirty || cardNumber?.touched)" class="alert alert-danger">
                                     <div *ngIf="cardNumber?.errors?.['required']">
-                                        Credit Card Number is required
+                                        Credit card number is required
                                     </div>
 
                                     <div *ngIf="cardNumber?.errors?.['pattern']">
-                                        Credit number is invalid
+                                        Credit card number is invalid
                                     </div>
                                 </div>
                             </div>
