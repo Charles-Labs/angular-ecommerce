@@ -61,7 +61,7 @@ export class CheckoutComponent {
 												EcommerceValidators.notOnlyWhitespace])
 			}),
 			creditCard: this.formBuilder.group({
-				cardType: [''],
+				cardType: new FormControl('',[Validators.required]),
 				nameOnCard: [''],
 				cardNumber: new FormControl('',[Validators.required, 
 												Validators.pattern('[0-9]{16}')]),
@@ -178,6 +178,7 @@ export class CheckoutComponent {
 	get billingAddressProvince() { return this.checkoutFormGroup.get('billingAddress.province'); }
 	get billingAddressareaCode() { return this.checkoutFormGroup.get('billingAddress.areaCode'); }
 
+	get cardType() { return this.checkoutFormGroup.get('creditCard.cardType'); }
 	get cardNumber() { return this.checkoutFormGroup.get('creditCard.cardNumber'); }
 
 	copyShippingAddressToBillingAddress(event: any) {
