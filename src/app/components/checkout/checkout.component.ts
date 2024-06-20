@@ -62,7 +62,7 @@ export class CheckoutComponent {
 			}),
 			creditCard: this.formBuilder.group({
 				cardType: new FormControl('',[Validators.required]),
-				nameOnCard: [''],
+				nameOnCard: new FormControl('',[Validators.required]),
 				cardNumber: new FormControl('',[Validators.required, 
 												Validators.pattern('[0-9]{16}')]),
 				securityCode: [''],
@@ -180,6 +180,7 @@ export class CheckoutComponent {
 
 	get cardType() { return this.checkoutFormGroup.get('creditCard.cardType'); }
 	get cardNumber() { return this.checkoutFormGroup.get('creditCard.cardNumber'); }
+	get nameOnCard() { return this.checkoutFormGroup.get('creditCard.nameOnCard'); }
 
 	copyShippingAddressToBillingAddress(event: any) {
 		if (event.target.checked) {
