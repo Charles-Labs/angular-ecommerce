@@ -270,8 +270,8 @@
                                         To Do
                                     </option>
                                 </select>
-                                <div *ngIf="cardNumber?.invalid && (cardNumber?.dirty || cardNumber?.touched)" class="alert alert-danger">
-                                    <div *ngIf="cardNumber?.errors?.['required']">
+                                <div *ngIf="cardType?.invalid && (cardType?.dirty || cardType?.touched)" class="alert alert-danger">
+                                    <div *ngIf="cardType?.errors?.['required']">
                                         Credit card type is required
                                     </div>
                                 </div>
