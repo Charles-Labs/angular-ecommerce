@@ -65,7 +65,7 @@ export class CheckoutComponent {
 				nameOnCard: new FormControl('',[Validators.required]),
 				cardNumber: new FormControl('',[Validators.required, 
 												Validators.pattern('[0-9]{16}')]),
-				securityCode: [''],
+				securityCode: new FormControl('',[Validators.required]),
 				expirationMonth: [''],
 				expirationYear: ['']
 			})
@@ -181,6 +181,7 @@ export class CheckoutComponent {
 	get cardType() { return this.checkoutFormGroup.get('creditCard.cardType'); }
 	get cardNumber() { return this.checkoutFormGroup.get('creditCard.cardNumber'); }
 	get nameOnCard() { return this.checkoutFormGroup.get('creditCard.nameOnCard'); }
+	get securityCode() { return this.checkoutFormGroup.get('creditCard.securityCode'); }
 
 	copyShippingAddressToBillingAddress(event: any) {
 		if (event.target.checked) {

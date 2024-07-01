@@ -316,6 +316,15 @@
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="securityCode" type="text">
+                                <div *ngIf="securityCode?.invalid && (securityCode?.dirty || securityCode?.touched)" class="alert alert-danger">
+                                    <div *ngIf="securityCode?.errors?.['required']">
+                                        Security code is required
+                                    </div>
+
+                                    <div *ngIf="securityCode?.errors?.['pattern']">
+                                        Security code is invalid
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
