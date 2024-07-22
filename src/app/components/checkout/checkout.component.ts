@@ -65,7 +65,8 @@ export class CheckoutComponent {
 				nameOnCard: new FormControl('',[Validators.required]),
 				cardNumber: new FormControl('',[Validators.required, 
 												Validators.pattern('[0-9]{16}')]),
-				securityCode: new FormControl('',[Validators.required]),
+				securityCode: new FormControl('',[Validators.required, 
+												Validators.pattern('[0-9]{3}')]),
 				expirationMonth: [''],
 				expirationYear: ['']
 			})
